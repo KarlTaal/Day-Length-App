@@ -6,21 +6,6 @@ var map = new mapboxgl.Map({
     zoom: 9 // starting zoom
 });
 
-// Add zoom and rotation controls to the map.
-map.addControl(new mapboxgl.NavigationControl());
-
-
-// Add geolocate control to the map.
-map.addControl(
-    new mapboxgl.GeolocateControl({
-        positionOptions: {
-            enableHighAccuracy: true
-        },
-        trackUserLocation: true
-    })
-);
-
-
 /* given a query in the form "lng, lat" or "lat, lng" returns the matching
 * geographic coordinate(s) as search results in carmen geojson format,
 * https://github.com/mapbox/carmen/blob/master/carmen-geojson.md
@@ -80,3 +65,28 @@ map.addControl(
         mapboxgl: mapboxgl
     })
 );
+
+
+// Add zoom and rotation controls to the map.
+map.addControl(new mapboxgl.NavigationControl());
+
+
+// Add geolocate control to the map.
+map.addControl(
+    new mapboxgl.GeolocateControl({
+        positionOptions: {
+            enableHighAccuracy: true
+        },
+        trackUserLocation: true
+    })
+);
+
+map.on('click', function (e) {
+    document.getElementById('info').innerHTML =
+// e.point is the x, y coordinates of the mousemove event relative
+// to the top-left corner of the map
+        JSON.stringify(e.point) +
+        '<br />' +
+        // e.lngLat is the longitude, latitude geographical position of the event
+        JSON.stringify(e.lngLat.wrap());
+});
