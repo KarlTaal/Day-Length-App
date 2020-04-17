@@ -1,6 +1,10 @@
 #map {
-    width: 400px;
-    height: 300px;
+    position: absolute;
+    top: 20%;
+    bottom: 20%;
+    left: 10%;
+    right: 10%;
+
 }
 
 h1 {
