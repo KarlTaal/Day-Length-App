@@ -1,9 +1,5 @@
 #map {
-    position: absolute;
-    top: 20%;
-    bottom: 20%;
-    left: 10%;
-    right: 10%;
+    height: 500px;
 }
 
 #info {
@@ -20,6 +16,32 @@
     background: #fff;
 }
 
-h1 {
+header > h1 {
     color: red;
+    width: 100%;
+    text-align: center;
 }
+
+#datepicker{
+    width: 100%;
+}
+
+.float-container {
+    padding: 20px;
+}
+
+.float-child {
+    width: 50%;
+    float: left;
+    padding: 20px;
+}
+
+#mapcont{
+    width: 70%;
+}
+
+#datecont{
+    width: 30%;
+}
+
+
