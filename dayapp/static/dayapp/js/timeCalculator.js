@@ -1,5 +1,5 @@
 export class DayInfo {
-    constructor(longitude, latitude, timezone, date) {
+    constructor(latitude, longitude, timezone, date) {
         this.longitude = longitude;
         this.latitude = latitude;
         this.timezone = timezone;

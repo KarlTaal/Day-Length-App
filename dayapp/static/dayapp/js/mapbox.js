@@ -1,12 +1,13 @@
-import {DayInfo} from "./timeCalculator.js";
-
 mapboxgl.accessToken = 'pk.eyJ1Ijoia2FybHRhYWwiLCJhIjoiY2s5Mzhqd2FlMDJndDNwcW54eWRtMjRmZCJ9.NPpf4n7Du1k977GiJDafEw';
 var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/mapbox/streets-v11',
     center: [24.7, 59.43], // starting position
-    zoom: 9 // starting zoom
+    zoom: 9, // starting zoom
+    type: "Point"
 });
+
+map.doubleClickZoom.disable();
 
 /* given a query in the form "lng, lat" or "lat, lng" returns the matching
 * geographic coordinate(s) as search results in carmen geojson format,
@@ -51,7 +52,7 @@ var coordinatesGeocoder = function (query) {
 
     if (geocodes.length === 0) {
 // else could be either lng, lat or lat, lng
-        geocodes.push(coordinateFeature(coord1, coord2));
+        //geocodes.push(coordinateFeature(coord1, coord2));
         geocodes.push(coordinateFeature(coord2, coord1));
     }
 
@@ -62,11 +63,18 @@ map.addControl(
     new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
         localGeocoder: coordinatesGeocoder,
-        zoom: 4,
-        placeholder: 'Try: -40, 170',
+        zoom: 7,
+        placeholder: 'Try: -40(lat), 170(long)',
+        marker: false,
         mapboxgl: mapboxgl
     })
 );
+
+
+$("#calcrun").click(function () {
+    var codes = [$("#inserted_long").val(), $("#inserted_lat").val()];
+    map.flyTo({center: codes, zoom: 9})
+});
 
 
 // Add zoom and rotation controls to the map.
@@ -83,13 +91,13 @@ map.addControl(
     })
 );
 
+map.on("moveend", function (e){
+    $("#inserted_lat").val(map.getCenter().toArray()[1]);
+    $("#inserted_long").val(map.getCenter().toArray()[0]);
+});
+
 
 map.on('click', function (e) {
-    document.getElementById('info').innerHTML = JSON.stringify(e.lngLat.wrap());
-    if ($("#datepicker").val() == "") {
-        document.getElementById('info').innerHTML = "hehe";
-        var day = new DayInfo(24.7536, 59.437, 3, new Date("2020-07-20"));
-        alert("Sunset: " + day.getSunsetAsString() + "\n" + "Sunrise: " + day.getSunriseAsString() + "\n" + "Day length: " + day.getDayLength());
-    } else
-        document.getElementById('info').innerHTML = "hihi";
+    var codes = [e.lngLat.toArray()[0], e.lngLat.toArray()[1]];
+    map.flyTo({center: codes, zoom: 9})
 });

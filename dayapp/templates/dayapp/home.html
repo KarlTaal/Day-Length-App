@@ -39,38 +39,52 @@
 <div class="float-container">
 
     <div id="mapcont" class="float-child">
+        <div>Map's center point is in use by default for the calculations.</div>
         <div class="map">
             <div id="map"></div>
         </div>
     </div>
 
     <div id="datecont" class="float-child">
+        <div>
+            <form action="/users" method="post">
+                <div>
+                    <div>
+                        <label for="lat">Latitude</label>
+                        <input id="inserted_lat" size="30" type="text"/>
+                        <label for="long">Longitude</label>
+                        <input id="inserted_long"  size="30" type="text"/>
+                    </div>
+                </div>
+            </form>
+        </div>
         <div class="date">
             <input id="datepicker"/>
         </div>
-        <div>
-            <pre id="info"></pre>
-            <div id="sunrise"></div>
-        </div>
+        <button id="calcrun" type="button">Run calculations!</button>
+        <div id="info"></div>
     </div>
 </div>
 
 
-<!-- Mapbox script-->
-<script type="module" src="{% static "dayapp/js/mapbox.js" %}"></script>
+    <!-- Mapbox script-->
+    <script type="module" src="{% static "dayapp/js/mapbox.js" %}"></script>
 
-<!-- Datepicker script-->
-<script type="text/javascript" src="{% static "dayapp/js/datepicker.js" %}"></script>
+    <!-- Update output when something happens-->
+    <script type="module" src="{% static "dayapp/js/updater.js" %}"></script>
 
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <!-- Datepicker script-->
+    <script type="text/javascript" src="{% static "dayapp/js/datepicker.js" %}"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
 </body>
 </html>
