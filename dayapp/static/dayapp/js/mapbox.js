@@ -72,9 +72,13 @@ map.addControl(
 
 
 $("#calcrun").click(function () {
-    var codes = [$("#inserted_long").val(), $("#inserted_lat").val()];
-    map.flyTo({center: codes, zoom: 9})
-});
+    if ($("#inserted_long").val() !== "" && $("#inserted_lat").val() !== "") {
+
+        var codes = [$("#inserted_long").val(), $("#inserted_lat").val()];
+        map.flyTo({center: codes, zoom: 9})
+    }
+})
+;
 
 
 // Add zoom and rotation controls to the map.
@@ -91,7 +95,7 @@ map.addControl(
     })
 );
 
-map.on("moveend", function (e){
+map.on("moveend", function (e) {
     $("#inserted_lat").val(map.getCenter().toArray()[1]);
     $("#inserted_long").val(map.getCenter().toArray()[0]);
 });
