@@ -1,4 +1,4 @@
-import {getSunriseAsString} from "./timeCalculator.js";
+import {DayInfo} from "./timeCalculator.js";
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoia2FybHRhYWwiLCJhIjoiY2s5Mzhqd2FlMDJndDNwcW54eWRtMjRmZCJ9.NPpf4n7Du1k977GiJDafEw';
 var map = new mapboxgl.Map({
@@ -88,7 +88,8 @@ map.on('click', function (e) {
     document.getElementById('info').innerHTML = JSON.stringify(e.lngLat.wrap());
     if ($("#datepicker").val() == "") {
         document.getElementById('info').innerHTML = "hehe";
-        alert(getSunriseAsString(24.7536, 59.437, 3, new Date("2020-07-20")));
+        var day = new DayInfo(24.7536, 59.437, 3, new Date("2020-07-20"));
+        alert("Sunset: " + day.getSunsetAsString() + "\n" + "Sunrise: " + day.getSunriseAsString() + "\n" + "Day length: " + day.getDayLength());
     } else
         document.getElementById('info').innerHTML = "hihi";
 });
