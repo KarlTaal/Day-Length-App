@@ -1,3 +1,5 @@
+import {getSunriseAsString} from "./timeCalculator.js";
+
 mapboxgl.accessToken = 'pk.eyJ1Ijoia2FybHRhYWwiLCJhIjoiY2s5Mzhqd2FlMDJndDNwcW54eWRtMjRmZCJ9.NPpf4n7Du1k977GiJDafEw';
 var map = new mapboxgl.Map({
     container: 'map', // container id
@@ -81,12 +83,12 @@ map.addControl(
     })
 );
 
+
 map.on('click', function (e) {
-    document.getElementById('info').innerHTML =
-// e.point is the x, y coordinates of the mousemove event relative
-// to the top-left corner of the map
-        JSON.stringify(e.point) +
-        '<br />' +
-        // e.lngLat is the longitude, latitude geographical position of the event
-        JSON.stringify(e.lngLat.wrap());
+    document.getElementById('info').innerHTML = JSON.stringify(e.lngLat.wrap());
+    if ($("#datepicker").val() == "") {
+        document.getElementById('info').innerHTML = "hehe";
+        alert(getSunriseAsString(24.7536, 59.437, 3, new Date("2020-07-20")));
+    } else
+        document.getElementById('info').innerHTML = "hihi";
 });

@@ -39,21 +39,28 @@
 <div class="float-container">
 
     <div id="mapcont" class="float-child">
-        <div class="green">
+        <div class="map">
             <div id="map"></div>
-            <pre id="info"></pre>
-            <script type="text/javascript" src="{% static "dayapp/mapbox.js" %}"></script>
         </div>
     </div>
 
     <div id="datecont" class="float-child">
-        <div class="blue">
+        <div class="date">
             <input id="datepicker"/>
-            <script type="text/javascript" src="{% static "dayapp/datepicker.js" %}"></script>
+        </div>
+        <div>
+            <pre id="info"></pre>
+            <div id="sunrise"></div>
         </div>
     </div>
 </div>
 
+
+<!-- Mapbox script-->
+<script type="module" src="{% static "dayapp/js/mapbox.js" %}"></script>
+
+<!-- Datepicker script-->
+<script type="text/javascript" src="{% static "dayapp/js/datepicker.js" %}"></script>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
