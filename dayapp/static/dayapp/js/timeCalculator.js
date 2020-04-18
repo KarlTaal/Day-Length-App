@@ -104,16 +104,16 @@ export class DayInfo {
     }
 
 
-    calcSunRise(longitude, latitude, timezone, date) {
+    calcSunRise() {
         return this.solarNoon() - this.HAsunriseDeg() * 4 / 1440;
     }
 
 
-    calcSunSet(longitude, latitude, timezone, date) {
+    calcSunSet() {
         return this.solarNoon() + this.HAsunriseDeg() * 4 / 1440;
     }
 
-    getSunriseAsString(longitude, latitude, timezone, date) {
+    getSunriseAsString() {
         return this.convertToTimeString(this.calcSunRise());
     }
 
@@ -122,7 +122,7 @@ export class DayInfo {
         return this.convertToTimeString(this.calcSunSet());
     }
 
-    getDayLength(longitude, latitude, timezone, date) {
+    getDayLength() {
         return this.convertToTimeString(this.calcSunSet() - this.calcSunRise());
     }
 }
