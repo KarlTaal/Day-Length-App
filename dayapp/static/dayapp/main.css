@@ -1,5 +1,5 @@
 #map {
-    height: 500px;
+    height: 600px;
 }
 
 #info {
@@ -16,13 +16,13 @@
     background: #fff;
 }
 
-header > h1 {
+header h1 {
     color: red;
     width: 100%;
     text-align: center;
 }
 
-#datepicker{
+#datepicker {
     width: 100%;
 }
 
@@ -36,13 +36,19 @@ header > h1 {
     padding: 20px;
 }
 
-#mapcont{
-    width: 70%;
+#mapcont {
+    width: 50%;
 
 }
 
-#datecont{
+#datecont {
     width: 30%;
+}
+
+#chart {
+   margin: auto;
+  width: 50%;
+  padding: 10px;
 }
 
 
