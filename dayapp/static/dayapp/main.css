@@ -16,38 +16,52 @@
     background: #fff;
 }
 
-header h1 {
-    color: red;
-    width: 100%;
-    text-align: center;
+
+header {
+  padding: 10px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
 }
 
-#datepicker {
+body{
+    background-color: lightcyan;
+}
+
+.date {
     width: 100%;
 }
 
 .float-container {
     padding: 20px;
+    height:700px;
 }
 
 .float-child {
     width: 50%;
+    height: 100%;
     float: left;
-    padding: 20px;
+    /*border-style: solid;
+    border-color: red;*/
 }
 
-#mapcont {
-    width: 50%;
-
+div{
+    text-align: center;
 }
 
-#datecont {
-    width: 30%;
+#outputfields{
+    margin-top: 150px;
+    font-size: 20px;
 }
 
 .ct-label {
     font-size: 17px;
     font-style: oblique;
+}
+
+#calcrun{
+    margin-top: 50px;
 }
 
 

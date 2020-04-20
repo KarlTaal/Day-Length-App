@@ -6,25 +6,24 @@ function convDate(str) {
 }
 
 $("#calcrun").click(function () {
-        let sunrise = "";
-        let sunset = "";
-        let daylength = "";
+        let sunrise = "Sunrise time (UTC+3):   ";
+        let sunset = "Sunset time (UTC+3):   ";
+        let daylength = "Day length:   ";
         if ($("#inserted_lat").val() !== "" && $("#inserted_long").val() !== "") {
             if ($("#datepicker").val() !== "") {
                 let day = new DayInfo($("#inserted_lat").val(), $("#inserted_long").val(), 3, convDate($("#datepicker").val()));
-                alert(day.calcSunSet());
-                sunrise = "Sunrise time (UTC+3):  " + day.getSunriseAsString();
-                sunset = "Sunset time (UTC+3):   " + day.getSunsetAsString();
-                daylength = "Day length:            " + day.getDayLength();
+                sunrise += day.getSunriseAsString();
+                sunset += day.getSunsetAsString();
+                daylength += day.getDayLength();
             }
             if ($('#datepickerend').val() != "" && $('#datepickerstart').val() != "") {
                 runGraphCalculations();
             }
         }
-        document.getElementById("info").innerHTML =
-            sunrise + "\n" +
-            sunset + "\n" +
-            daylength;
+
+        $("#sunrise").html(sunrise);
+        $("#sunset").html(sunset);
+        $("#daylength").html(daylength);
 
         let message = "";
         if ($("#inserted_lat").val() === "")
@@ -92,7 +91,7 @@ $('#datepickerstart').datepicker().change(function () {
         $('#datepickerstart').val("");
         alert("Start date can not be after or equal to end date!");
     }
-    $("#chart").hide();
+    //$("#chart").hide();
 });
 
 $('#datepickerend').datepicker().change(function () {
@@ -100,5 +99,5 @@ $('#datepickerend').datepicker().change(function () {
         $('#datepickerend').val("");
         alert("End date can not be before or equal to start date!");
     }
-    $("#chart").hide();
+    //$("#chart").hide();
 });

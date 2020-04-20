@@ -36,12 +36,12 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'dayapp/main.css' %}">
 
-    <title>Day length web app</title>
+    <title>Sun calculator</title>
 </head>
 
 <body>
 <header>
-    <h1>Here you can calculate the sunrise and sunset times</h1>
+    <h1>Sun calculator</h1>
 </header>
 
 
@@ -54,31 +54,51 @@
     </div>
 
     <div id="datecont" class="float-child">
-        <div>
-            <form action="/users" method="post">
+        <div class="float-container">
+            <div id="inputfields" class="float-child">
                 <div>
-                    <div>
-                        <label for="lat">Latitude</label>
-                        <input id="inserted_lat" size="30" type="text"/>
-                        <br>
-                        <label for="long">Longitude</label>
-                        <input id="inserted_long" size="30" type="text"/>
-                    </div>
+                    <form>
+                        <div>
+                            <div>
+                                <label for="lat">Latitude</label>
+                                <br>
+                                <input name="lat" id="inserted_lat" size="30" type="text"/>
+                                <br>
+                                <label for="long">Longitude</label>
+                                <br>
+                                <input name="long" id="inserted_long" size="30" type="text"/>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </form>
+                <br>
+                <br>
+                <div class="date">
+                    <label for="date1">Date for single day calculations</label><br>
+                    <input name="date1" id="datepicker" readonly/>
+                </div>
+                <div class="date">
+                    <label for="date2">Start date for interval</label><br>
+                    <input name="date2" id="datepickerstart" readonly/>
+                </div>
+                <div class="date">
+                    <label for="date3">End date for interval</label><br>
+                    <input name="date3" id="datepickerend" readonly/>
+                </div>
+                <br>
+                <button id="calcrun" type="button">Run calculations!</button>
+            </div>
+            <div id="outputfields" class="float-child">
+                <div id="sunrise">Sunrise time (UTC+3):</div>
+                <br>
+                <div id="sunset">Sunset time (UTC+3):</div>
+                <br>
+                <div id="daylength">Day length:</div>
+            </div>
         </div>
-        <div class="date">
-            <input id="datepicker" readonly/>
-        </div>
-        <div class="date">
-            <input id="datepickerstart" readonly/>
-        </div>
-        <div class="date">
-            <input id="datepickerend" readonly/>
-        </div>
-        <button id="calcrun" type="button">Run calculations!</button>
-        <div id="info"></div>
     </div>
+
+
 </div>
 <div id="chart" style="display: none"></div>
 
