@@ -36,9 +36,11 @@ body{
 .float-container {
     padding: 20px;
     height:700px;
+    min-width: 600px;
 }
 
 .float-child {
+    min-width: 280px;
     width: 50%;
     height: 100%;
     float: left;
@@ -46,13 +48,18 @@ body{
     border-color: red;*/
 }
 
-div{
-    text-align: center;
-}
-
 #outputfields{
     margin-top: 150px;
     font-size: 20px;
+}
+
+#inputfields{
+    margin-top: 90px;
+    padding-left: 50px;
+}
+
+#inputfields input{
+    width: 210px;
 }
 
 .ct-label {
