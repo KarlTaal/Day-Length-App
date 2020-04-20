@@ -17,60 +17,59 @@
 }
 
 
-header {
-  padding: 10px;
-  text-align: center;
-  background: #1abc9c;
-  color: white;
-  font-size: 30px;
+body {
+    background-color: lightcyan;
+    margin: 0;
 }
 
-body{
-    background-color: lightcyan;
+header {
+    padding: 10px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
 }
+
 
 .date {
     width: 100%;
 }
 
-.float-container {
-    padding: 20px;
-    height:700px;
-    min-width: 600px;
+.col-sm-6 {
+    /*border-style: solid;
+    border-color: blue;*/
 }
 
-.float-child {
-    min-width: 280px;
-    width: 50%;
-    height: 100%;
-    float: left;
+.container {
+    width: 100%;
     /*border-style: solid;
     border-color: red;*/
 }
 
+#outputfields *{
+    width: 100%;
+}
+
 #outputfields{
-    margin-top: 150px;
-    font-size: 20px;
+    padding-top: 130px;
 }
-
 #inputfields{
-    margin-top: 90px;
-    padding-left: 50px;
+    padding-top: 110px;
 }
 
-#inputfields input{
-    width: 210px;
+#inputfields input {
+    width: 70%;
 }
 
-.ct-label {
-    font-size: 17px;
-    font-style: oblique;
-}
 
-#calcrun{
+#calcrun {
     margin-top: 50px;
 }
 
+.fixed-bottom{
+    bottom:0;
+}
 
-
-
+#mapcont{
+    padding-top: 40px;
+}

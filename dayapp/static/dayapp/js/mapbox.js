@@ -64,7 +64,7 @@ map.addControl(
         accessToken: mapboxgl.accessToken,
         localGeocoder: coordinatesGeocoder,
         zoom: 7,
-        placeholder: 'Try: -40(lat), 170(long)',
+        placeholder: '      Otsi koordinaatideg',
         marker: false,
         mapboxgl: mapboxgl
     })

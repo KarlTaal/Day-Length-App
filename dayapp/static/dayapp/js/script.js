@@ -6,9 +6,9 @@ function convDate(str) {
 }
 
 $("#calcrun").click(function () {
-        let sunrise = "Sunrise time (UTC+3):   ";
-        let sunset = "Sunset time (UTC+3):   ";
-        let daylength = "Day length:   ";
+        let sunrise = "Päikesetõusu aeg (UTC+3):  ";
+        let sunset = "Päikeseloojangu aeg (UTC+3):  ";
+        let daylength = "Päeva pikkus:  ";
         if ($("#inserted_lat").val() !== "" && $("#inserted_long").val() !== "") {
             if ($("#datepicker").val() !== "") {
                 let day = new DayInfo($("#inserted_lat").val(), $("#inserted_long").val(), 3, convDate($("#datepicker").val()));

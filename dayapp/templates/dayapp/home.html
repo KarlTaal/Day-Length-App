@@ -4,7 +4,7 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -45,17 +45,17 @@
 </header>
 
 
-<div class="float-container">
-    <div id="mapcont" class="float-child">
+<div class="container">
+    <div id="mapcont" class="col-sm-6">
         <div>Map's center point is in use by default for the calculations.</div>
         <div class="map">
             <div id="map"></div>
         </div>
     </div>
 
-    <div id="datecont" class="float-child">
-        <div class="float-container">
-            <div id="inputfields" class="float-child">
+    <div id="datecont" class="col-sm-6">
+        <div class="container">
+            <div id="inputfields" class="col-sm-6">
                 <div>
                     <form>
                         <div>
@@ -88,8 +88,9 @@
                 <br>
                 <button id="calcrun" type="button">Run calculations!</button>
             </div>
-            <div id="outputfields" class="float-child">
-                <div style="font-size: 30px">Calculation results</div><br><br>
+            <div id="outputfields" class="col-sm-6">
+                <div style="font-size: 30px">Calculation results</div>
+                <br><br>
                 <div id="sunrise">Sunrise time (UTC+3):</div>
                 <br>
                 <div id="sunset">Sunset time (UTC+3):</div>
@@ -102,7 +103,6 @@
 
 </div>
 <div id="chart" style="display: none"></div>
-
 
 <!-- Mapbox script-->
 <script type="module" src="{% static "dayapp/js/mapbox.js" %}"></script>
