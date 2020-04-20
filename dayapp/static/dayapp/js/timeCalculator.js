@@ -96,11 +96,19 @@ export class DayInfo {
 
     convertToTimeString(value, isLenght) {
         let c1 = Math.floor(value * 24);
-        let hours = c1.toString();
+        let tmp = c1;
+        if (c1 >24){
+            while (tmp > 24){
+                tmp -= 24;
+            }
+        }
+        if (tmp == 24)
+            tmp = 0;
+        let hours = tmp.toString();
         let minutes = Math.floor((value * 24 - c1) * 60).toString();
         if (isLenght)
             return hours + "h " + minutes + "min";
-        return (hours.length == 2 ? hours : "0" + hours) + ":" + (minutes.length == 2 ? minutes : "0" + minutes);
+        return (hours.length === 2 ? hours : "0" + hours) + ":" + (minutes.length === 2 ? minutes : "0" + minutes);
     }
 
 
@@ -114,7 +122,7 @@ export class DayInfo {
     }
 
     getSunriseAsString() {
-        return this.convertToTimeString(this.calcSunRise());
+        return this.convertToTimeString(this.calcSunRise(), false);
     }
 
 

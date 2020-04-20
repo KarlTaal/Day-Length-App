@@ -12,6 +12,7 @@ $("#calcrun").click(function () {
         if ($("#inserted_lat").val() !== "" && $("#inserted_long").val() !== "") {
             if ($("#datepicker").val() !== "") {
                 let day = new DayInfo($("#inserted_lat").val(), $("#inserted_long").val(), 3, convDate($("#datepicker").val()));
+                alert(day.calcSunSet());
                 sunrise = "Sunrise time (UTC+3):  " + day.getSunriseAsString();
                 sunset = "Sunset time (UTC+3):   " + day.getSunsetAsString();
                 daylength = "Day length:            " + day.getDayLength();
@@ -61,8 +62,8 @@ function runGraphCalculations() {
         lengths.push(new DayInfo($("#inserted_lat").val(), $("#inserted_long").val(), 3, start).getDayLengthAsMinutes());
         start.setTime(start.getTime() + (24 * 60 * 60 * 1000));
     }
-    if (dates.length > 20) {
-        let h = parseInt(dates.length / 20);
+    if (dates.length > 15) {
+        let h = parseInt(dates.length / 15 );
         for (let i = 1; i < dates.length + 1; i++) {
             if (i % h !== 0)
                 dates[i] = "";
@@ -77,7 +78,8 @@ function runGraphCalculations() {
     };
     var options = {
         width: '100%',
-        height: 400
+        height: 400,
+        chartPadding: 50,
     };
     $("#chart").show();
     new Chartist.Line('#chart', data, options);
