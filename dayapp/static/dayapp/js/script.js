@@ -62,7 +62,7 @@ function runGraphCalculations() {
         start.setTime(start.getTime() + (24 * 60 * 60 * 1000));
     }
     if (dates.length > 15) {
-        let h = parseInt(dates.length / 15 );
+        let h = parseInt(dates.length / 15);
         for (let i = 1; i < dates.length + 1; i++) {
             if (i % h !== 0)
                 dates[i] = "";
@@ -81,6 +81,7 @@ function runGraphCalculations() {
         chartPadding: 50,
     };
     $("#chart").show();
+    $("#chartH").show();
     new Chartist.Line('#chart', data, options);
 
 }
