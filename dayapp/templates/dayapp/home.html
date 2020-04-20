@@ -30,6 +30,10 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
     <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <link rel="stylesheet" type="text/css" href="{% static 'dayapp/main.css' %}">
 
     <title>Day length web app</title>
@@ -64,38 +68,32 @@
             </form>
         </div>
         <div class="date">
-            <input id="datepicker"/>
+            <input id="datepicker" readonly/>
+        </div>
+        <div class="date">
+            <input id="datepickerstart" readonly/>
+        </div>
+        <div class="date">
+            <input id="datepickerend" readonly/>
         </div>
         <button id="calcrun" type="button">Run calculations!</button>
         <div id="info"></div>
     </div>
 </div>
+<div id="chart" style="display: none"></div>
 
-<div id="chart"></div>
-
-<script>
-    var data = {
-    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-    series: [
-        [5, 2, 4, 2, 0]
-    ]
-};
-new Chartist.Line('#chart', data);
-</script>
 
 <!-- Mapbox script-->
 <script type="module" src="{% static "dayapp/js/mapbox.js" %}"></script>
 
-<!-- Update output when something happens-->
-<script type="module" src="{% static "dayapp/js/updater.js" %}"></script>
+<!-- Script-->
+<script type="module" src="{% static "dayapp/js/script.js" %}"></script>
 
-<!-- Datepicker script-->
-<script type="text/javascript" src="{% static "dayapp/js/datepicker.js" %}"></script>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>

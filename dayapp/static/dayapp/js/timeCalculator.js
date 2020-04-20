@@ -119,11 +119,15 @@ export class DayInfo {
 
 
     getSunsetAsString() {
-        return this.convertToTimeString(this.calcSunSet());
+        return this.convertToTimeString(this.calcSunSet(), false);
     }
 
     getDayLength() {
-        return this.convertToTimeString(this.calcSunSet() - this.calcSunRise());
+        return this.convertToTimeString(this.calcSunSet() - this.calcSunRise(), true);
+    }
+
+    getDayLengthAsMinutes() {
+        return (this.calcSunSet() - this.calcSunRise())*24;
     }
 }
 
