@@ -56,7 +56,7 @@ $("#lang").click(function (e) {
 
 
     if (!isEnglish) {
-        $("#lang").attr("src", '../../static/dayapp/est.png');
+        $("#lang").attr("src", '../../static/dayapp/images/est.png');
         for (let i = 0; i < IDs.length; i++) {
             if (i === 9 || i === 10 || i === 11) {
                 let tmp = $(IDs[i]).html();
@@ -65,7 +65,7 @@ $("#lang").click(function (e) {
                 $(IDs[i]).html(englishPhrases[i]);
         }
     } else {
-        $("#lang").attr("src", '../../static/dayapp/eng.png');
+        $("#lang").attr("src", '../../static/dayapp/images/eng.png');
         for (let i = 0; i < IDs.length; i++) {
             if (i === 9 || i === 10 || i === 11){
                 let tmp = $(IDs[i]).html();
