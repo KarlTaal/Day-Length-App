@@ -50,63 +50,71 @@
     </div>
 </header>
 
-<div class="container">
-    <div id="mapcont" class="col-sm-6">
-        <div id="mapPS">Map's center point is in use by default for the calculations.</div>
-        <div class="map">
-            <div id="map"></div>
-        </div>
-    </div>
-
-    <div id="datecont" class="col-sm-6">
+<div id="outerCont">
+    <div id="main">
         <div class="container">
-            <div id="inputfields" class="col-sm-6">
-                <div>
-                    <form>
-                        <div>
-                            <div>
-                                <label id="inserted_latlabel" for="lat">Latitude</label>
-                                <br>
-                                <input name="lat" id="inserted_lat" size="30" type="text"/>
-                                <br>
-                                <label id="inserted_longlabel" for="long">Longitude</label>
-                                <br>
-                                <input name="long" id="inserted_long" size="30" type="text"/>
-                            </div>
-                        </div>
-                    </form>
+            <div id="mapcont" class="col-sm-6">
+                <div id="mapPS">Map's center point is in use by default for the calculations.</div>
+                <div class="map">
+                    <div id="map"></div>
                 </div>
-                <br>
-                <br>
-                <div class="date">
-                    <label id="datepickerlabel1" for="date1">Date for single day calculations</label><br>
-                    <input name="date1" id="datepicker" readonly/>
-                </div>
-                <div class="date">
-                    <label id="datepickerlabel2" for="date2">Start date for interval</label><br>
-                    <input name="date2" id="datepickerstart" readonly/>
-                </div>
-                <div class="date">
-                    <label id="datepickerlabe3" for="date3">End date for interval</label><br>
-                    <input name="date3" id="datepickerend" readonly/>
-                </div>
-                <br>
-                <button id="calcrun" type="button">Run calculations!</button>
             </div>
-            <div id="outputfields" class="col-sm-6">
-                <div id="resultH" style="font-size: 30px">Calculation results</div>
-                <br><br>
-                <div id="sunrise">Sunrise time (UTC+3):</div>
-                <br>
-                <div id="sunset">Sunset time (UTC+3):</div>
-                <br>
-                <div id="daylength">Day length:</div>
+
+            <div id="datecont" class="col-sm-6">
+                <div class="container">
+                    <div id="inputfields" class="col-sm-6">
+                        <div>
+                            <form>
+                                <div>
+                                    <div>
+                                        <label id="inserted_latlabel" for="lat">Latitude</label>
+                                        <br>
+                                        <input name="lat" id="inserted_lat" size="30" type="text"/>
+                                        <br>
+                                        <label id="inserted_longlabel" for="long">Longitude</label>
+                                        <br>
+                                        <input name="long" id="inserted_long" size="30" type="text"/>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="date">
+                            <label id="datepickerlabel1" for="date1">Date for single day calculations</label><br>
+                            <input name="date1" id="datepicker" readonly/>
+                        </div>
+                        <div class="date">
+                            <label id="datepickerlabel2" for="date2">Start date for interval</label><br>
+                            <input name="date2" id="datepickerstart" readonly/>
+                        </div>
+                        <div class="date">
+                            <label id="datepickerlabe3" for="date3">End date for interval</label><br>
+                            <input name="date3" id="datepickerend" readonly/>
+                        </div>
+                        <br>
+                        <button id="calcrun" type="button">Run calculations!</button>
+                    </div>
+                    <div id="outputfields" class="col-sm-6">
+                        <div id="resultH" style="font-size: 30px">Calculation results</div>
+                        <br><br>
+                        <div id="sunrise">Sunrise time (UTC+3):</div>
+                        <br>
+                        <div id="sunset">Sunset time (UTC+3):</div>
+                        <br>
+                        <div id="daylength">Day length:</div>
+                    </div>
+                </div>
             </div>
         </div>
+        <h2 id="chartH" style="display: none">Day lengths in hours</h2>
+        <div id="chart" style="display: none"></div>
     </div>
 </div>
-<h2 id="chartH" style="display: none">Day lengths in hours</h2>
-<div id="chart" style="display: none"></div>
+<footer>
+    <p id="author">Author Karl Taal University of Tartu</p>
+    <address id="email">E-mail: karltaal@gmail.com</address>
+</footer>
 
 <!-- language-->
 <script type="module" src="{% static "dayapp/js/language.js" %}"></script>

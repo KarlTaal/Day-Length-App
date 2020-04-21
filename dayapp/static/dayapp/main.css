@@ -1,3 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+}
+
+
 #map {
     height: 500px;
 }
@@ -99,4 +109,31 @@ header {
     width: 100%;
     text-align: center;
     margin-top: 100px;
+    /*border-style: solid;
+    border-color: red;*/
+}
+
+#outerCont{
+    min-height: 90%;
+    /*border-style: solid;
+    border-color: red;*/
+}
+
+#main{
+    overflow: auto;
+    padding-bottom: 50px;
+}
+
+#chart{
+    margin-bottom: 100px;
+}
+
+footer{
+    position: relative;
+    background-color: grey;
+    height: 100px;
+    margin-top: -90px;
+    text-align: center;
+    font-size: 17px;
+    padding-top: 20px;
 }

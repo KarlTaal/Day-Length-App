@@ -14,7 +14,9 @@ $("#lang").click(function (e) {
         "Sunrise time (UTC+3):",
         "Sunset time (UTC+3):",
         "Day length:",
-        "Day lengths in hours"
+        "Day lengths in hours",
+        "Author Karl Taal University of Tartu",
+        "E-mail: karltaal@gmail.com"
     ];
     let estonianPhrases = [
         "Päikese kalkulaator",
@@ -29,7 +31,9 @@ $("#lang").click(function (e) {
         "Päikesetõusu aeg (UTC+3):",
         "Päikeseloojangu aeg (UTC+3):",
         "Päeva pikkus:",
-        "Päeva pikkused tundides"
+        "Päeva pikkused tundides",
+        "Autor Karl Taal Tartu Ülikool",
+        "E-post: karltaal@gmail.com"
     ];
 
     let IDs = [
@@ -45,7 +49,9 @@ $("#lang").click(function (e) {
         "#sunrise",
         "#sunset",
         "#daylength",
-        "#chartH"
+        "#chartH",
+        "#author",
+        "#email"
     ];
 
 
