@@ -45,7 +45,7 @@
         <div id="headercol" class="col-sm-6">
             <h1 id="siteHeading">Sun calculator</h1></div>
         <div id="langcol" class="col-sm-6">
-            <img id="lang" src="{% static 'dayapp/est.png' %}">
+            <img id="lang" src="{% static 'dayapp/images/est.png' %}">
         </div>
     </div>
 </header>
@@ -69,11 +69,11 @@
                                     <div>
                                         <label id="inserted_latlabel" for="lat">Latitude</label>
                                         <br>
-                                        <input name="lat" id="inserted_lat" size="30" type="text"/>
+                                        <input name="lat" id="inserted_lat" size="30" value="59.43" type="text"/>
                                         <br>
                                         <label id="inserted_longlabel" for="long">Longitude</label>
                                         <br>
-                                        <input name="long" id="inserted_long" size="30" type="text"/>
+                                        <input name="long" id="inserted_long" size="30" value="24.7" type="text"/>
                                     </div>
                                 </div>
                             </form>
@@ -85,11 +85,11 @@
                             <input name="date1" id="datepicker" readonly/>
                         </div>
                         <div class="date">
-                            <label id="datepickerlabel2" for="date2">Start date for interval</label><br>
+                            <label id="datepickerlabel2" for="date2">Start date for the graph</label><br>
                             <input name="date2" id="datepickerstart" readonly/>
                         </div>
                         <div class="date">
-                            <label id="datepickerlabe3" for="date3">End date for interval</label><br>
+                            <label id="datepickerlabel3" for="date3">End date for the graph</label><br>
                             <input name="date3" id="datepickerend" readonly/>
                         </div>
                         <br>
@@ -98,11 +98,11 @@
                     <div id="outputfields" class="col-sm-6">
                         <div id="resultH" style="font-size: 30px">Calculation results</div>
                         <br><br>
-                        <div id="sunrise">Sunrise time (UTC+3):</div>
+                        <div class="out" id="sunrise">Sunrise time (UTC+3):</div>
                         <br>
-                        <div id="sunset">Sunset time (UTC+3):</div>
+                        <div class="out" id="sunset">Sunset time (UTC+3):</div>
                         <br>
-                        <div id="daylength">Day length:</div>
+                        <div class="out" id="daylength">Day length:</div>
                     </div>
                 </div>
             </div>

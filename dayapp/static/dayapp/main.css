@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "Trebuchet MS";
 }
 
 html, body{
@@ -23,20 +24,18 @@ html, body{
     font-size: 12px;
     text-align: center;
     color: #222;
-    background: #fff;
 }
 
 
 body {
-    background-color: lightcyan;
     margin: 0;
 }
 
 header {
     padding: 10px;
     text-align: center;
-    background: #1abc9c;
-    color: white;
+    background: lightblue;
+    color: black;
     font-size: 30px;
 }
 
@@ -45,15 +44,8 @@ header {
     width: 100%;
 }
 
-.col-sm-6 {
-    /*border-style: solid;
-    border-color: blue;*/
-}
-
 .container {
     width: 100%;
-    /*border-style: solid;
-    border-color: red;*/
 }
 
 #outputfields *{
@@ -63,6 +55,7 @@ header {
 #outputfields{
     padding-top: 130px;
 }
+
 #inputfields{
     padding-top: 110px;
 }
@@ -71,13 +64,13 @@ header {
     width: 70%;
 }
 
-#inputfields button{
-    width: 70%;
+.out {
+    font-size: 19px;
 }
 
-
 #calcrun {
-    margin-top: 50px;
+    margin-top: 30px;
+    width: 70%;
 }
 
 .fixed-bottom{
@@ -89,12 +82,19 @@ header {
 }
 
 #lang{
-    width: 50px;
-    height: 25px;
+    margin-top: 20px;
+    width: 70px;
+    height: 40px;
 }
+
+#lang:hover{
+    cursor: pointer;
+}
+
 #langcol{
     width: 5%;
 }
+
 #headercol{
     padding-left: 5%;
     width: 95%;
@@ -102,21 +102,19 @@ header {
 
 .ct-label {
     font-size: 17px;
-    font-style: oblique;
 }
 
 #chartH{
     width: 100%;
     text-align: center;
     margin-top: 100px;
-    /*border-style: solid;
-    border-color: red;*/
 }
 
 #outerCont{
     min-height: 90%;
-    /*border-style: solid;
-    border-color: red;*/
+    background-image: url("./images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #main{
@@ -128,12 +126,17 @@ header {
     margin-bottom: 100px;
 }
 
+/*#D2C2CF*/
 footer{
     position: relative;
-    background-color: grey;
-    height: 100px;
-    margin-top: -90px;
+    background-color: #E5E5E5;
+    height: 80px;
+    margin-top: -75px;
     text-align: center;
-    font-size: 17px;
-    padding-top: 20px;
+    font-size: 14px;
+    padding-top: 10px;
+}
+
+.ct-series-a .ct-line {
+  stroke: skyblue;
 }

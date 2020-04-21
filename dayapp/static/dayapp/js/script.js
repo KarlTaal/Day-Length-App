@@ -6,9 +6,9 @@ function convDate(str) {
 }
 
 $("#calcrun").click(function () {
-        let sunrise = "Päikesetõusu aeg (UTC+3):  ";
-        let sunset = "Päikeseloojangu aeg (UTC+3):  ";
-        let daylength = "Päeva pikkus:  ";
+        let sunrise = $("#sunrise").html().split(":")[0] + ":  ";
+        let sunset = $("#sunset").html().split(":")[0] + ":  ";
+        let daylength = $("#daylength").html().split(":")[0] + ":  ";
         if ($("#inserted_lat").val() !== "" && $("#inserted_long").val() !== "") {
             if ($("#datepicker").val() !== "") {
                 let day = new DayInfo($("#inserted_lat").val(), $("#inserted_long").val(), 3, convDate($("#datepicker").val()));
@@ -79,26 +79,32 @@ function runGraphCalculations() {
         width: '100%',
         height: 400,
         chartPadding: 50,
+        elements: {point: {radius: 0}}
     };
+    var responsiveOptions = [
+  ['screen', {
+    showPoint: false,
+  }]
+];
     $("#chart").show();
     $("#chartH").show();
-    new Chartist.Line('#chart', data, options);
+    new Chartist.Line('#chart', data, options, responsiveOptions);
 
 }
 
 
-$('#datepickerstart').datepicker().change(function () {
-    if ($('#datepickerend').val() != "" && convDate($('#datepickerend').val()) <= convDate($('#datepickerstart').val())) {
-        $('#datepickerstart').val("");
-        alert("Start date can not be after or equal to end date!");
-    }
-    //$("#chart").hide();
-});
+    $('#datepickerstart').datepicker().change(function () {
+        if ($('#datepickerend').val() != "" && convDate($('#datepickerend').val()) <= convDate($('#datepickerstart').val())) {
+            $('#datepickerstart').val("");
+            alert("Start date can not be after or equal to end date!");
+        }
+        //$("#chart").hide();
+    });
 
-$('#datepickerend').datepicker().change(function () {
-    if ($('#datepickerstart').val() != "" && convDate($('#datepickerstart').val()) >= convDate($('#datepickerend').val())) {
-        $('#datepickerend').val("");
-        alert("End date can not be before or equal to start date!");
-    }
-    //$("#chart").hide();
-});
+    $('#datepickerend').datepicker().change(function () {
+        if ($('#datepickerstart').val() != "" && convDate($('#datepickerstart').val()) >= convDate($('#datepickerend').val())) {
+            $('#datepickerend').val("");
+            alert("End date can not be before or equal to start date!");
+        }
+        //$("#chart").hide();
+    });

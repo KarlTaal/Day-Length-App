@@ -95,7 +95,12 @@ map.addControl(
     })
 );
 
+
+let currentMarker = new mapboxgl.Marker().setLngLat([24.7, 59.43]).addTo(map);;
 map.on("moveend", function (e) {
+    if (currentMarker != null)
+        currentMarker.remove();
+    currentMarker = new mapboxgl.Marker().setLngLat(map.getCenter().toArray()).addTo(map);
     $("#inserted_lat").val(map.getCenter().toArray()[1]);
     $("#inserted_long").val(map.getCenter().toArray()[0]);
 });
