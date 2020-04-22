@@ -10,7 +10,7 @@ Alguses arvasin naiivselt, et ülesanne on üsna lihtne. Peale natukest internet
 
 
 ## Kasutatud töövahendid
-Python, versioon 3.7.6- https://www.python.org/downloads/release/python-376/
+Python, versioon 3.7.6- https://www.python.org/downloads/release/python-376/   
 Django, versioon 3.0.5
 
 Veebilehe käivitamiseks peavad olemas olema nii Python kui ka Django, soovitavalt eelmainitud versioonid. Kui need on installitud, siis piisab projekti kaustas käsureal sisestada käsk "python manage.py runserver". Veebilehte vaadeldes on vajalik ka interneti ühendus, sest muidu ei ilmu mõned funktsionaalsused veebilehele, nagu näiteks kaart.
