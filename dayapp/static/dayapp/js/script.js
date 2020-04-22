@@ -24,6 +24,7 @@ $("#calcrun").click(function () {
         if ($("#inserted_lat").val() !== "" && $("#inserted_long").val() !== "") {
             if ($("#datepicker").val() !== "") {
                 let day = new DayInfo($("#inserted_lat").val(), $("#inserted_long").val(), 3, convDate($("#datepicker").val()));
+                alert(day.calcSunSet().toString() + "\n" + day.calcSunRise().toString())
                 sunrise += day.getSunriseAsString();
                 sunset += day.getSunsetAsString();
                 daylength += day.getDayLength();
