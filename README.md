@@ -13,8 +13,8 @@ Kui veebileht valmis oli, siis panin selle ka Herokusse ülesse ja hetkel pääs
 Alguses arvasin naiivselt, et ülesanne on üsna lihtne. Peale natukest internetis uurimist päikesetõusu ja päikeseloojangu arvutamise kohta mu arvamus muutus. Sain teada, et selle arvutamine ei olegi nii lihtne, kui kõlab. Peale mitme lehekülje uurimist, otsustasin implementeerida valemi, mis on välja toodud Global Monitoring Laboratory leheküljel, https://www.esrl.noaa.gov/gmd/grad/solcalc/. Sealt leidsin ma exceli faili, kus oli implementeeritud täpselt see valem, mida mul vaja oli. Minu töö oli see nüüd ümber kirjutada enda veebilehele. Kuna arvutusi oli palju, siis olid ka vead kerged tulema, kuid peale mõningat parandamist töötas kõik täpselt nii nagu loodetud.
 
 
-## Kasutatud töövahendid
+## Kasutatud töövahendid ja käivitamine
 Python, versioon 3.7.6- https://www.python.org/downloads/release/python-376/   
-Django, versioon 3.0.5
+Django, versioon 3.0.5- pip install django
 
-Veebilehe käivitamiseks peavad olemas olema nii Python kui ka Django paigaldatud, soovitavalt eelmainitud versioonid. Kui need on installitud, siis piisab projekti kaustas käsureal sisestada käsk "python manage.py runserver". Veebilehte vaadeldes on vajalik ka interneti ühendus, sest muidu ei ilmu mõned funktsionaalsused veebilehele, nagu näiteks kaart.
+Veebilehe käivitamiseks peavad olemas olema nii Python kui ka Django paigaldatud, soovitavalt eelmainitud versioonid või uuemad. Kui need on installitud, siis piisab projekti kaustas käsureal sisestada käsk "python manage.py runserver". Veebilehte vaadeldes on vajalik ka interneti ühendus, sest muidu ei ilmu mõned funktsionaalsused veebilehele, nagu näiteks kaart. Veebilehel on ka olemas praegu aktiivne veebilink, mis on järgmine- https://immense-peak-16244.herokuapp.com/.
