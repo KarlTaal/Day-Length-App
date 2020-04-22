@@ -1,6 +1,9 @@
+//Veebilehe keele vahetamine.
+
 $("#lang").click(function (e) {
     let isEnglish = $("#siteHeading").html() === "Sun calculator";
 
+    //Fraasid inglise keeles.
     let englishPhrases = [
         "Sun calculator",
         "Map's center point is in use by default for the calculations.",
@@ -18,6 +21,8 @@ $("#lang").click(function (e) {
         "Author Karl Taal University of Tartu",
         "E-mail: karltaal@gmail.com"
     ];
+
+    //Fraasid eesti keeles.
     let estonianPhrases = [
         "Päikese kalkulaator",
         "Kaardi keskpunk on vaikimisi alati kasutusel arvutuste läbiviimisel.",
@@ -36,6 +41,7 @@ $("#lang").click(function (e) {
         "E-post: karltaal@gmail.com"
     ];
 
+    //HTML taggide id'd, et saaksime uut teksti seadistada.
     let IDs = [
         "#siteHeading",
         "#mapPS",
@@ -54,7 +60,7 @@ $("#lang").click(function (e) {
         "#email"
     ];
 
-
+    //Kui hetkene keel on inglise keel, siis seadistame uueks keeleks eesti keele.
     if (!isEnglish) {
         $("#lang").attr("src", '../../static/dayapp/images/est.png');
         for (let i = 0; i < IDs.length; i++) {
@@ -64,7 +70,7 @@ $("#lang").click(function (e) {
             } else
                 $(IDs[i]).html(englishPhrases[i]);
         }
-    } else {
+    } else { //vastasel juhul seadistame keeleks inglise keele.
         $("#lang").attr("src", '../../static/dayapp/images/eng.png');
         for (let i = 0; i < IDs.length; i++) {
             if (i === 9 || i === 10 || i === 11){

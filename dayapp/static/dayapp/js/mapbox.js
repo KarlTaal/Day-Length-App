@@ -1,3 +1,5 @@
+
+//Loon kaardi.
 mapboxgl.accessToken = 'pk.eyJ1Ijoia2FybHRhYWwiLCJhIjoiY2s5Mzhqd2FlMDJndDNwcW54eWRtMjRmZCJ9.NPpf4n7Du1k977GiJDafEw';
 var map = new mapboxgl.Map({
     container: 'map', // container id
@@ -7,8 +9,12 @@ var map = new mapboxgl.Map({
     type: "Point"
 });
 
+
+//Deaktiveerin topeltkliki kaardi suurendamise.
 map.doubleClickZoom.disable();
 
+
+//Kopeeritud MapBoxi dokumentatsiooni juurest näidete alt.
 /* given a query in the form "lng, lat" or "lat, lng" returns the matching
 * geographic coordinate(s) as search results in carmen geojson format,
 * https://github.com/mapbox/carmen/blob/master/carmen-geojson.md
@@ -59,6 +65,7 @@ var coordinatesGeocoder = function (query) {
     return geocodes;
 };
 
+//Lisame controlleri kaardile. Sisendite jaoks.
 map.addControl(
     new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
@@ -96,6 +103,8 @@ map.addControl(
 );
 
 
+//Käsitlema juhtu kui kaardi liigutati ja kaart lõpetas liikumise.
+//Seadistame uue markeri kaardi keskele ja seadistame uued koordinaadid ka väljadele.
 let currentMarker = new mapboxgl.Marker().setLngLat([24.7, 59.43]).addTo(map);;
 map.on("moveend", function (e) {
     if (currentMarker != null)
@@ -105,7 +114,7 @@ map.on("moveend", function (e) {
     $("#inserted_long").val(map.getCenter().toArray()[0]);
 });
 
-
+//Kui kaardile vajutatakse, siis liigutame kaardi sinna.
 map.on('click', function (e) {
     var codes = [e.lngLat.toArray()[0], e.lngLat.toArray()[1]];
     map.flyTo({center: codes, zoom: 9})
