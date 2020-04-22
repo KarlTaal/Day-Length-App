@@ -2,7 +2,7 @@
 
 ## Üldist infot
 
-Kodutöö alguses sain aru, et lahendus tuleb ühe leheküljeline ja sellepoolest üsna otsekohene. Selletõttu otsustasin proovida uut raamistikku, millega kogemus seni puudus. Otsustasin veebilehe realiseerida Django raamistikuga. Vaadates mõnda YouTube tutorialit, sain ma projekti kiiresti püsti ja sain hakata funktsionaalsust implementeerima. Veebirakenduse tegemiseks läks mul aega umbkaudu 2-3 päeva, tehes iga päev paar tunnikest tööd. 
+Kodutöö alguses sain aru, et lahendus tuleb ühe leheküljeline ja sellepoolest üsna otsekohene. Selletõttu otsustasin proovida uut raamistikku, millega kogemus seni puudus. Otsustasin veebilehe realiseerida Django raamistikuga. Vaadates mõnda YouTube tutorialit, sain ma projekti kiiresti püsti ja sain hakata funktsionaalsust implementeerima. Veebirakenduse tegemiseks läks mul aega umbkaudu 2-3 päeva, tehes iga päev paar tunnikest tööd. Lisafunktsioonina lisasin veebilehele ka võimaluse kuvatava keele muutmise.
 
 
 ## Kellaaegade arvutamine
