@@ -89,7 +89,7 @@ function runGraphCalculations() {
     //Hõrendame x telje labelite sagedust, et suure ajavahemiku korral ei tekiks sasipundart.
     //Probleem säilib siiski, kui veebilehitsejat väiksemaks teha.
     if (dates.length > 15) {
-        let h = parseInt(dates.length / 15);
+        let h = parseInt(dates.length / 10);
         for (let i = 1; i < dates.length + 1; i++) {
             if (i % h !== 0)
                 dates[i] = "";
