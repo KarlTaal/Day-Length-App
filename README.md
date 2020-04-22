@@ -1,4 +1,4 @@
-# Päeva pikkuse veebirakendus
+# Päeva pikkuse, päikesetõusu ja päikeseloojangu arvutamise veebirakendus
 
 ## Üldist infot
 
