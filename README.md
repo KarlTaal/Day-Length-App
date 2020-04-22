@@ -10,7 +10,7 @@ Kui veebileht valmis oli, siis panin selle ka Herokusse ülesse ja hetkel pääs
 
 
 ## Kellaaegade arvutamine
-Alguses arvasin naiivselt, et ülesanne on üsna lihtne. Peale natukest internetis uurimist päikesetõusu ja päikeseloojangu arvutamise kohta mu arvamus muutus. Sain teada, et selle arvutamine ei olegi nii lihtne, kui kõlab. Peale mitme lehekülje uurimist, otsustasin implementeerida valemi, mis on välja toodud Global Monitoring Laboratory leheküljel, https://www.esrl.noaa.gov/gmd/grad/solcalc/. Sealt leidsin ma exceli faili, kus oli implementeeritud täpselt see valem, mida mul vaja oli. Minu töö oli see nüüd ümber kirjutada minu veebilehele. Kuna arvutusi oli palju, siis olid ka vead kerged tulema, kuid peale mõningat parandamist töötas kõik täpselt nii nagu loodetud.
+Alguses arvasin naiivselt, et ülesanne on üsna lihtne. Peale natukest internetis uurimist päikesetõusu ja päikeseloojangu arvutamise kohta mu arvamus muutus. Sain teada, et selle arvutamine ei olegi nii lihtne, kui kõlab. Peale mitme lehekülje uurimist, otsustasin implementeerida valemi, mis on välja toodud Global Monitoring Laboratory leheküljel, https://www.esrl.noaa.gov/gmd/grad/solcalc/. Sealt leidsin ma exceli faili, kus oli implementeeritud täpselt see valem, mida mul vaja oli. Minu töö oli see nüüd ümber kirjutada enda veebilehele. Kuna arvutusi oli palju, siis olid ka vead kerged tulema, kuid peale mõningat parandamist töötas kõik täpselt nii nagu loodetud.
 
 
 ## Kasutatud töövahendid
